@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل السكن - سكن شباب أمام الجامعة الأهلية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #050b16, #0f172a);
+            color: #fff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #f1c40f;
+        }
+
+        /* تنسيق معرض الصور المطور المتجاوب */
+        .gallery {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 15px;
+            margin-bottom: 40px;
+            height: 500px;
+        }
+
+        .main-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .small-images {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            overflow-y: auto;
+            max-height: 100%;
+            padding-right: 5px;
+        }
+
+        /* تخصيص شريط التمرير للصور الجانبية */
+        .small-images::-webkit-scrollbar {
+            width: 6px;
+        }
+        .small-images::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 10px;
+        }
+
+        .gallery a {
+            display: block;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: 0.3s;
+        }
+
+        .gallery a:hover {
+            border-color: #d4af37;
+            transform: scale(1.02);
+        }
+
+        .small-images a {
+            height: 110px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, .04);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, .2);
+            padding: 30px;
+            border-radius: 25px;
+        }
+
+        .title {
+            font-size: 34px;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .location {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #cbd5e1;
+        }
+
+        .price-container {
+            display: inline-block;
+            font-size: 28px;
+            font-weight: 900;
+            color: #d4af37;
+            margin-bottom: 25px;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 10px 20px;
+            border-radius: 12px;
+            border-right: 4px solid #d4af37;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .feature {
+            background: #111827;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #d4af37;
+        }
+
+        .feature p {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .description {
+            line-height: 2;
+            color: #ddd;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .book-btn {
+            flex: 1;
+            padding: 15px;
+            background: linear-gradient(135deg, #25D366, #1faa52);
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .book-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        @media(max-width:768px){
+            .gallery {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            .main-image {
+                height: 280px;
+            }
+            .small-images {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                max-height: none;
+                overflow-y: visible;
+            }
+            .small-images a {
+                height: 85px;
+            }
+            .title {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+            العودة للسكنات
+        </a>
+
+        <div class="gallery">
+            <a href="https://ibb.co/TBLBG4NM" class="main-image">
+                <img src="https://i.ibb.co/Lz5zyxsd/Whats-App-Image-2026-06-06-at-12-34-11-AM.jpg" alt="الصورة الرئيسية للسكن" border="0">
+            </a>
+
+            <div class="small-images">
+                <a href="https://ibb.co/rfwzCYJg"><img src="https://i.ibb.co/CsHYkgFq/Whats-App-Image-2026-06-06-at-12-34-10-AM-1.jpg" alt="صورة السكن" border="0"></a>
+                <a href="https://ibb.co/nq6Y6DB8"><img src="https://i.ibb.co/gbmfmDdF/Whats-App-Image-2026-06-06-at-12-34-13-AM.jpg" alt="صورة السكن" border="0"></a>
+                <a href="https://ibb.co/ZzcHBpn4"><img src="https://i.ibb.co/VYMHgc7n/Whats-App-Image-2026-06-06-at-12-34-12-AM.jpg" alt="صورة السكن" border="0"></a>
+                <a href="https://ibb.co/m5s0tD4j"><img src="https://i.ibb.co/whH7C04k/Whats-App-Image-2026-06-06-at-12-34-11-AM.jpg" alt="صورة السكن" border="0"></a>
+                <a href="https://ibb.co/RTThYRKG"><img src="https://i.ibb.co/YBBDPHS4/Whats-App-Image-2026-06-06-at-12-34-10-AM-1.jpg" alt="صورة السكن" border="0"></a>
+                <a href="https://ibb.co/TMvSVdLH"><img src="https://i.ibb.co/Wvxwbjtc/Whats-App-Image-2026-06-06-at-12-34-10-AM.jpg" alt="صورة السكن" border="0"></a>
+                <a href="https://ibb.co/qLzj11FQ"><img src="https://i.ibb.co/MybSNN50/Whats-App-Image-2026-06-06-at-12-34-09-AM-2.jpg" alt="صورة السكن" border="0"></a>
+                <a href="https://ibb.co/fYJSBZ5b"><img src="https://i.ibb.co/tMRhkntS/Whats-App-Image-2026-06-06-at-12-34-09-AM-1.jpg" alt="صورة السكن" border="0"></a>
+                <a href="https://ibb.co/qMBjmFgz"><img src="https://i.ibb.co/WWn5BpzQ/Whats-App-Image-2026-06-06-at-12-34-09-AM" alt="صورة السكن" border="0"></a>
+                <a href="https://ibb.co/gbbV1Fc6"><img src="https://i.ibb.co/RGGyn4J7/Whats-App-Image-2026-06-06-at-12-34-08-AM.jpg" alt="صورة السكن" border="0"></a>
+            </div>
+        </div>
+
+        <div class="info-card">
+
+            <h1 class="title">سكن شباب فاخر</h1>
+
+            <p class="location">
+                <i class="fa-solid fa-location-dot"></i>
+                أمام الجامعة الأهلية - أسيوط الجديدة
+            </p>
+
+            <div class="price-container">
+                1100 جنيه / شهر
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <i class="fa-solid fa-bed"></i>
+                    <p>الغرفة: 4 أسرة</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-snowflake"></i>
+                    <p>تهوية وتكييف عادي</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-wifi"></i>
+                    <p>واي فاي سريع</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-kitchen-set"></i>
+                    <p>مطبخ مجهز بالكامل</p>
+                </div>
+            </div>
+
+            <div class="description">
+                <p>
+                    سكن طلابي مجهز بالكامل يقع بموقع استراتيجي وحيوي مباشرة أمام الجامعة الأهلية بمدينة أسيوط الجديدة. 
+                    يوفر السكن غرفاً واسعة ومفروشة بالكامل ومصممة بعناية لتلبية احتياجات الطلاب الباحثين عن الراحة والهدوء أثناء فترة الدراسة. 
+                    يتميز السكن بتوافر خدمة الإنترنت عالي السرعة (واي فاي)، ومطبخ متكامل مجهز بكافة الأجهزة والأدوات اللازمة، مما يجعله الخيار المثالي والمريح لكل طالب.
+                </p>
+            </div>
+
+            <div class="buttons">
+                <a href="https://wa.me/201025910607?text=السلام%20عليكم%0A%0Aأرغب%20في%20حجز:%0Aسكن%20شباب%20-%20أسيوط%20الجديدة%20(1)%0Aالموقع:%20أمام%20الجامعة%20الأهلية%0Aالنوع:%20شباب%0Aالتكييف:%20عادي%0Aالسعر:%201100%20جنيه"
+target="_blank"
+class="book-btn">
+
+<i class="fa-brands fa-whatsapp"></i>
+احجز الآن
+
+</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

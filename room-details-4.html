@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل السكن - سكن بنات</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #050b16, #0f172a);
+            color: #fff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #f1c40f;
+        }
+
+        .gallery-container {
+            margin-bottom: 40px;
+        }
+
+        .small-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .small-images a {
+            display: block;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: 0.3s;
+        }
+
+        .small-images a:hover {
+            transform: scale(1.03);
+            border-color: #d4af37;
+        }
+
+        .small-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, .04);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, .2);
+            padding: 30px;
+            border-radius: 25px;
+        }
+
+        .title {
+            font-size: 34px;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .location {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #cbd5e1;
+        }
+
+        .price-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 15px;
+            border-radius: 15px;
+            border-right: 4px solid #d4af37;
+        }
+
+        .price-item {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .price-item span {
+            color: #d4af37;
+            font-size: 26px;
+            font-weight: 900;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .feature {
+            background: #111827;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #d4af37;
+        }
+
+        .feature p {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .description {
+            line-height: 2;
+            color: #ddd;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .book-btn {
+            flex: 1;
+            padding: 15px;
+            background: linear-gradient(135deg, #25D366, #1faa52);
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .book-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        @media(max-width:768px) {
+            .title {
+                font-size: 26px;
+            }
+            .price-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+            العودة للسكنات
+        </a>
+
+        <!-- قسم معرض الصور المعترض -->
+        <div class="gallery-container">
+            <div class="small-images">
+
+                <a href="https://ibb.co/Q7fv2ZDv"><img src="https://i.ibb.co/BHt2Xmn2/Whats-App-Image-2026-06-07-at-11-50-36-AM-1.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-36-AM-1" border="0"></a>
+<a href="https://ibb.co/S4L6kFDr"><img src="https://i.ibb.co/xt42nxKH/Whats-App-Image-2026-06-07-at-11-50-37-AM-1.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-37-AM-1" border="0"></a>
+<a href="https://ibb.co/Psq1VmMy"><img src="https://i.ibb.co/gbktcjd8/Whats-App-Image-2026-06-07-at-11-50-37-AM-2.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-37-AM-2" border="0"></a>
+<a href="https://ibb.co/vr7rz6G"><img src="https://i.ibb.co/mYLYzVw/Whats-App-Image-2026-06-07-at-11-50-37-AM-3.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-37-AM-3" border="0"></a>
+<a href="https://ibb.co/Wpk6qyK9"><img src="https://i.ibb.co/93bNzTYX/Whats-App-Image-2026-06-07-at-11-50-37-AM.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-37-AM" border="0"></a>
+<a href="https://ibb.co/LzjksMmY"><img src="https://i.ibb.co/4Zvm0czK/Whats-App-Image-2026-06-07-at-11-50-38-AM-1.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-38-AM-1" border="0"></a>
+<a href="https://ibb.co/jkXZFN3H"><img src="https://i.ibb.co/Df2gnJwL/Whats-App-Image-2026-06-07-at-11-50-38-AM-2.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-38-AM-2" border="0"></a>
+<a href="https://ibb.co/Rkr54b1Q"><img src="https://i.ibb.co/8Lvh4sJP/Whats-App-Image-2026-06-07-at-11-50-38-AM-3.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-38-AM-3" border="0"></a>
+<a href="https://ibb.co/v4KFNVk3"><img src="https://i.ibb.co/Ld2FTY1x/Whats-App-Image-2026-06-07-at-11-50-38-AM-4.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-38-AM-4" border="0"></a>
+<a href="https://ibb.co/SXG2c87p"><img src="https://i.ibb.co/tMFSztP5/Whats-App-Image-2026-06-07-at-11-50-38-AM.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-38-AM" border="0"></a>
+<a href="https://ibb.co/S4T1rWpg"><img src="https://i.ibb.co/TxXnLp5G/Whats-App-Image-2026-06-07-at-11-50-39-AM-1.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-39-AM-1" border="0"></a>
+<a href="https://ibb.co/Hp7HDqw0"><img src="https://i.ibb.co/bR1KgXwx/Whats-App-Image-2026-06-07-at-11-50-39-AM-2.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-39-AM-2" border="0"></a>
+<a href="https://ibb.co/nMV7HzMk"><img src="https://i.ibb.co/0yWCghyJ/Whats-App-Image-2026-06-07-at-11-50-39-AM.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-39-AM" border="0"></a>
+<a href="https://ibb.co/0yQpscNt"><img src="https://i.ibb.co/m5SrNGs8/Whats-App-Image-2026-06-07-at-11-50-34-AM-1.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-34-AM-1" border="0"></a>
+<a href="https://ibb.co/cSvSwDH0"><img src="https://i.ibb.co/7dzdQ25P/Whats-App-Image-2026-06-07-at-11-50-34-AM.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-34-AM" border="0"></a>
+<a href="https://ibb.co/VWjb3jsj"><img src="https://i.ibb.co/rG7qv7V7/Whats-App-Image-2026-06-07-at-11-50-35-AM.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-35-AM" border="0"></a>
+<a href="https://ibb.co/gFf9VvQ3"><img src="https://i.ibb.co/Hpb4dNRV/Whats-App-Image-2026-06-07-at-11-50-36-AM.jpg" alt="Whats-App-Image-2026-06-07-at-11-50-36-AM" border="0"></a>
+            </div>
+        </div>
+
+        <!-- بطاقة تفاصيل السكن -->
+        <div class="info-card">
+
+            <h1 class="title">سكن بنات - عمارة كاملة</h1>
+
+            <p class="location">
+                <i class="fa-solid fa-location-dot"></i>
+                حي رجال الأعمال - عند مجمع البنوك - أسيوط الجديدة
+            </p>
+
+            <!-- أسعار الغرف المتاحة -->
+            <div class="price-container">
+                <div class="price-item">غرفة سنجل: <span>2500 جنيه</span> / شهر</div>
+                <div class="price-item">غرفة دبل: <span>1500 جنيه</span> / شهر</div>
+            </div>
+
+            <!-- المميزات والخدمات -->
+            <div class="features">
+                <div class="feature">
+                    <i class="fa-solid fa-building"></i>
+                    <p>عمارة 5 أدوار (شقتين بالدور)</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-door-open"></i>
+                    <p>الشقة 5 غرف + حمام ومطبخ</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-broom"></i>
+                    <p>نظافة يومية للشقة (والغرف يومين بالأسبوع)</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-wifi"></i>
+                    <p>نت مستقل (سيلفر خاص لكل بنت)</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-bell"></i>
+                    <p>الخدمات: 2000 جنيه طول الترم</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-kitchen-set"></i>
+                    <p>مطبخ مجهز بالكامل</p>
+                </div>
+            </div>
+
+            <!-- الوصف التفصيلي -->
+            <div class="description">
+                <p>
+                    سكن طالبات فاخر ومجهز بالكامل يقع في أرقى مناطق أسيوط الجديدة بـ "حي رجال الأعمال" بالقرب من مجمع البنوك. 
+                    العمارة مخصصة بالكامل للبنات لتوفر أعلى درجات الأمان والخصوصية وتتكون من 5 أدوار. 
+                    تحتوي كل شقة على 5 غرف واسعة ومطبخ مجهز وحمام. 
+                    نوفر نظام غرف مرن (سنجل ودبل) مع خدمات متكاملة تشمل عاملة نظافة يومية للشقة ونظافة دورية للغرف مرتين أسبوعياً، 
+                    بالإضافة إلى إنترنت عالي السرعة بحساب مستقيل (سيلفر) خاص لكل طالبة لضمان جودة الخدمة.
+                </p>
+            </div>
+
+            <!-- زر الحجز -->
+            <div class="buttons">
+                <a href="https://wa.me/201025910607?text=السلام%20عليكم%0A%0Aأرغب%20في%20الاستفسار%20عن:%0Aسكن%20بنات%20حي%20رجال%20الأعمال%0Aالموقع:%20عند%20مجمع%20البنوك%0Aسعر%20السنجل:%202500%20جنيه%0Aسعر%20الدبل:%201500%20جنيه"
+target="_blank"
+class="book-btn">
+
+<i class="fa-brands fa-whatsapp"></i>
+احجز الآن
+
+</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

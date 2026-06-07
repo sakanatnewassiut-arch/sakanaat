@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل السكن - سكن بنات فيلا شمال الجامعة</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #050b16, #0f172a);
+            color: #fff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #f1c40f;
+        }
+
+        /* تنسيق معرض الصور المطور */
+        .gallery {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 15px;
+            margin-bottom: 40px;
+            height: 500px;
+        }
+
+        .main-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .small-images {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            overflow-y: auto;
+            max-height: 100%;
+            padding-right: 5px;
+        }
+
+        /* تخصيص شريط التمرير للصور الجانبية */
+        .small-images::-webkit-scrollbar {
+            width: 6px;
+        }
+        .small-images::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 10px;
+        }
+
+        .gallery a {
+            display: block;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: 0.3s;
+        }
+
+        .gallery a:hover {
+            border-color: #d4af37;
+            transform: scale(1.02);
+        }
+
+        .small-images a {
+            height: 110px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, .04);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, .2);
+            padding: 30px;
+            border-radius: 25px;
+        }
+
+        .title {
+            font-size: 34px;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        .location {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #cbd5e1;
+        }
+
+        /* تنسيق أسعار الغرف المتعددة */
+        .price-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .price-tag {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 10px 20px;
+            border-radius: 12px;
+            border-right: 4px solid #d4af37;
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .price-tag span {
+            color: #d4af37;
+            font-weight: 900;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .feature {
+            background: #111827;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature i {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #d4af37;
+        }
+
+        .feature p {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .description {
+            line-height: 2;
+            color: #ddd;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .book-btn {
+            flex: 1;
+            padding: 15px;
+            background: linear-gradient(135deg, #25D366, #1faa52);
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .book-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        @media(max-width:768px){
+            .gallery {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            .main-image {
+                height: 280px;
+            }
+            .small-images {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                max-height: none;
+                overflow-y: visible;
+            }
+            .small-images a {
+                height: 85px;
+            }
+            .title {
+                font-size: 26px;
+            }
+            .price-box {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="index.html" class="back-btn">
+            <i class="fa-solid fa-arrow-right"></i>
+            العودة للسكنات
+        </a>
+
+       <!-- قسم معرض الصور المطور -->
+        <div class="gallery">
+            <!-- الصورة الرئيسية الكبرى -->
+ <a href="https://ibb.co/gFSbDBBT"><img src="https://i.ibb.co/cX6KN77F/Whats-App-Image-2026-06-07-at-12-21-37-PM-1.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-37-PM-1" border="0"></a>
+
+
+            <!-- بقية الصور الجانبية المتناسقة المصغرة -->
+            <div class="small-images">
+                
+                <a href="https://ibb.co/Z1YHZwDJ"><img src="https://i.ibb.co/VpQHKh4N/Whats-App-Image-2026-06-07-at-12-21-35-PM-1.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-35-PM-1" border="0"></a>
+<a href="https://ibb.co/1GLS3Xys"><img src="https://i.ibb.co/b5PfxvwH/Whats-App-Image-2026-06-07-at-12-21-35-PM-2.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-35-PM-2" border="0"></a>
+<a href="https://ibb.co/Mkm3Jnt8"><img src="https://i.ibb.co/HTjk97bN/Whats-App-Image-2026-06-07-at-12-21-35-PM-3.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-35-PM-3" border="0"></a>
+<a href="https://ibb.co/zh6JzgjZ"><img src="https://i.ibb.co/HDhdjy1q/Whats-App-Image-2026-06-07-at-12-21-35-PM.jpg" alt="Whats App Image 2026 06 07 at 12 21 35 PM" border="0"></a>
+<a href="https://ibb.co/p6kpRDbb"><img src="https://i.ibb.co/ZRbCYsGG/Whats-App-Image-2026-06-07-at-12-21-36-PM-1.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-36-PM-1" border="0"></a>
+<a href="https://ibb.co/S79KFXjd"><img src="https://i.ibb.co/h1tK3R6Z/Whats-App-Image-2026-06-07-at-12-21-36-PM-2.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-36-PM-2" border="0"></a>
+<a href="https://ibb.co/ccGXf4PY"><img src="https://i.ibb.co/QF2jSyZD/Whats-App-Image-2026-06-07-at-12-21-36-PM-3.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-36-PM-3" border="0"></a>
+<a href="https://ibb.co/DgwBdNs7"><img src="https://i.ibb.co/XkFnH9Nz/Whats-App-Image-2026-06-07-at-12-21-36-PM.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-36-PM" border="0"></a>
+<a href="https://ibb.co/gFSbDBBT"><img src="https://i.ibb.co/cX6KN77F/Whats-App-Image-2026-06-07-at-12-21-37-PM-1.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-37-PM-1" border="0"></a>
+<a href="https://ibb.co/WWF9TTbP"><img src="https://i.ibb.co/xSGv44pf/Whats-App-Image-2026-06-07-at-12-21-37-PM-2.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-37-PM-2" border="0"></a>
+<a href="https://ibb.co/fVjKy4c3"><img src="https://i.ibb.co/nqxVYzWX/Whats-App-Image-2026-06-07-at-12-21-37-PM.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-37-PM" border="0"></a>
+<a href="https://ibb.co/FfGvVC1"><img src="https://i.ibb.co/hnp5fwN/Whats-App-Image-2026-06-07-at-12-21-38-PM-1.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-38-PM-1" border="0"></a>
+<a href="https://ibb.co/DPR3Dxg1"><img src="https://i.ibb.co/ZRMy6n1f/Whats-App-Image-2026-06-07-at-12-21-38-PM-2.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-38-PM-2" border="0"></a>
+<a href="https://ibb.co/FcF0QxD"><img src="https://i.ibb.co/SHzdks3/Whats-App-Image-2026-06-07-at-12-21-38-PM-3.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-38-PM-3" border="0"></a>
+<a href="https://ibb.co/cjH4qZ9"><img src="https://i.ibb.co/XqgcHKP/Whats-App-Image-2026-06-07-at-12-21-38-PM-4.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-38-PM-4" border="0"></a>
+<a href="https://ibb.co/s4csjp5"><img src="https://i.ibb.co/hNr2sxX/Whats-App-Image-2026-06-07-at-12-21-38-PM.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-38-PM" border="0"></a>
+<a href="https://ibb.co/4w017sLq"><img src="https://i.ibb.co/hxTYyXN6/Whats-App-Image-2026-06-07-at-12-21-39-PM-1.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-39-PM-1" border="0"></a>
+<a href="https://ibb.co/PzZq4Z2q"><img src="https://i.ibb.co/KzjT7jtT/Whats-App-Image-2026-06-07-at-12-21-39-PM.jpg" alt="Whats-App-Image-2026-06-07-at-12-21-39-PM" border="0"></a><br /><a target='_blank' href='https://ar.imgbb.com/'></a>
+            </div>
+        </div>
+
+        <div class="info-card">
+
+            <h1 class="title">سكن بنات فاخر - بأقرب فيلا للجامعة</h1>
+
+            <p class="location">
+                <i class="fa-solid fa-location-dot"></i>
+                شمال الجامعة - قطعة رقم 796 - في سوق تجاري بالقرب من السوق القديم ومسجد عمر بن الخطاب - أسيوط الجديدة
+            </p>
+
+            <div class="price-box">
+                <div class="price-tag">السرير في الغرفة الدوبل (مكيفة): <span>1700 جنيه / شهر</span></div>
+                <div class="price-tag">السرير في الغرفة الدوبل (غير مكيفة): <span>1600 جنيه / شهر</span></div>
+                <div class="price-tag">السرير في الغرفة التريبل: <span>1600 جنيه / شهر</span></div>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <i class="fa-solid fa-door-open"></i>
+                    <p>4 غرف (غرفتين دوبل + غرفتين تريبل)</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-snowflake"></i>
+                    <p>غرف مكيفة ومراوح سقف</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-building-shield"></i>
+                    <p>كاميرات مراقبة وأسوار عالية</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-user-shield"></i>
+                    <p>مشرفة مقيمة + حارس مقيم</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-hotel"></i>
+                    <p>فرش فندقي ومراتب يانسن ألماني</p>
+                </div>
+                <div class="feature">
+                    <i class="fa-solid fa-plug"></i>
+                    <p>أجهزة كهربائية كاملة وجديدة</p>
+                </div>
+            </div>
+
+            <div class="description">
+                <p>
+                    فرصة ممتازة وحصرية لطالبات جامعة أسيوط الجديدة! سكن بنات راقي ومجهز بالكامل بأقرب فيلا للجامعة (فرش فندقي فاخر). 
+                    يقع السكن في منطقة شمال الجامعة المتميزة (قطعة رقم 796) داخل سوق تجاري مريح، وبالقرب من السوق القديم ومسجد عمر بن الخطاب. 
+                    <br><br>
+                    <strong>تفاصيل وتقسيم الغرف:</strong><br>
+                    السكن عبارة عن 4 غرف واسعة ومفروشة (غرفتين نظام ثنائي "دوبل" وغرفتين نظام ثلاثي "تريبل")، وجميع الغرف مجهزة بتكييفات حديثة باستثناء غرفة دوبل واحدة (بها مروحة سقف بجانب التكييف). لكل طالبة مفتاح خاص بغرفتها، وتحتوي كل غرفة على دولاب ومكتب خاص للمذاكرة، بالإضافة لفرش كامل بمراتب يانسن ألماني جديدة تماماً بكفرات جديدة لراحة مثالية.
+                    <br><br>
+                    <strong>التجهيزات والأجهزة الكهربائية:</strong><br>
+                    التشطيب حديث بالكامل والفرش والستائر جديدة تماماً، ويتوفر بالسكن كافة الأجهزة الكهربائية الأساسية بجودة عالية: (بوتجاز - غسالة - ثلاجة - فريزر - مراوح سقف - تكييفات).
+                    <br><br>
+                    <strong>الأمان والخدمات:</strong><br>
+                    الفيلا آمنة للغاية ومحاطة بأسوار عالية ومحمية بنظام كاميرات مراقبة يغطي جميع الاتجاهات على مدار الساعة. السكن يوفر أعلى درجات الانضباط والراحة بوجود <strong>مشرفة مقيمة</strong> لإدارة السكن و<strong>حارس مقيم</strong> لتأمين الفيلا، مع توافر جميع الكماليات والخدمات المطلوبة.
+                </p>
+            </div>
+
+            <div class="buttons">
+                <a href="https://wa.me/201025910607?text=السلام%20عليكم%0A%0Aأرغب%20في%20الاستفسار%20عن:%0Aسكن%20بنات%20فاخر%20شمال%20الجامعة%0Aالموقع:%20شمال%20الجامعة%20بجوار%20السوق%20القديم%20ومسجد%20عمر%20بن%20الخطاب%0Aالسعر:%20يبدأ%20من%201600%20جنيه"
+target="_blank"
+class="book-btn">
+
+<i class="fa-brands fa-whatsapp"></i>
+احجز الآن
+
+</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
